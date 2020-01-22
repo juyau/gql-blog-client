@@ -12,11 +12,20 @@ import Menubar from "./components/Menubar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import SignlePost from "./pages/SinglePost";
 import { AuthProvider } from "./context/auth";
 import AuthRoute from "./utils/AuthRoute";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/"
+  uri: "https://gqls-blog.herokuapp.com/",
+  request: operation => {
+    const token = localStorage.getItem("jwtToken");
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ""
+      }
+    });
+  }
 });
 
 function App() {
@@ -29,6 +38,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <AuthRoute exact path="/login" component={Login} />
             <AuthRoute exact path="/register" component={Register} />
+            <Route exact path="/posts/:postId" component={SignlePost} />
           </Container>
         </Router>
       </AuthProvider>

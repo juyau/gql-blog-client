@@ -17,7 +17,7 @@ const Login = props => {
 
   const [login, { loading }] = useMutation(LOGIN, {
     update(_, { data: { login: userData } }) {
-      console.log(userData);
+      // console.log(userData);
       context.login(userData);
       props.history.push("/");
     },
@@ -78,6 +78,9 @@ const Login = props => {
           </ul>
         </Message>
       )}
+      <p style={{ textAlign: "right", marginTop: 20 }}>
+        Don't have a account? <a href="/register">Register now.</a>
+      </p>
     </div>
   );
 };
