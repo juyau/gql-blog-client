@@ -17,7 +17,7 @@ import { AuthProvider } from "./context/auth";
 import AuthRoute from "./utils/AuthRoute";
 
 const client = new ApolloClient({
-  uri: "https://gqls-blog.herokuapp.com/",
+  uri: "http://localhost:4000/",
   request: operation => {
     const token = localStorage.getItem("jwtToken");
     operation.setContext({
@@ -29,6 +29,8 @@ const client = new ApolloClient({
 });
 
 function App() {
+  document.title = "GraphQL Blog";
+
   return (
     <ApolloProvider client={client}>
       <AuthProvider>

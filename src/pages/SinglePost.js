@@ -31,18 +31,22 @@ const SinglePost = props => {
   let postMarkup = <p> Loading...</p>;
 
   const { data, loading, error } = useQuery(GET_POST, {
-    variables: { postId: pID }
+    variables: { postId: pID },
+    onError(err) {
+      console.log(err.graphQLErrors[0].message);
+    }
   });
 
   if (loading) {
     postMarkup = <Loader size="large" />;
   }
   if (error) {
+    // console.log(error);
     postMarkup = (
       <Message warning>
         <Icon name="warning circle" />
         Errors:
-        <ul>{error.data.errors.message}</ul>
+        <ul>{error.graphQLErrors[0].message}</ul>
       </Message>
     );
   }
