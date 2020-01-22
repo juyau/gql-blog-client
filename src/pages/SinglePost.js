@@ -37,9 +37,10 @@ const SinglePost = props => {
     }
   });
 
-  if (loading) {
-    postMarkup = <Loader size="large" />;
-  }
+  // if (loading) {
+  //   console.log("loading on sigle post.");
+  //   postMarkup = <Loader size="large" />;
+  // }
   if (error) {
     // console.log(error);
     postMarkup = (
@@ -131,7 +132,11 @@ const SinglePost = props => {
     );
   }
 
-  return postMarkup;
+  return loading ? (
+    <Loader size="large" active inline="centered" />
+  ) : (
+    postMarkup
+  );
 };
 
 const GET_POST = gql`

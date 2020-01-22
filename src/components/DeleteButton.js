@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Icon, Confirm, Transition, Popup } from "semantic-ui-react";
+import { Button, Icon, Confirm, Transition } from "semantic-ui-react";
 import { gql } from "apollo-boost";
 import { useMutation } from "@apollo/react-hooks";
 
@@ -46,20 +46,20 @@ const DeleteButton = ({ postId, commentId, callback }) => {
 
   return (
     <>
-      <Popup
+      {/* <Popup
         content="Delete"
-        trigger={
-          <Button
-            basic
-            as="div"
-            floated="right"
-            onClick={() => setConfirmOpen(true)}
-            loading={loading ? true : false}
-          >
-            <Icon name="trash" color="red" style={{ margin: 0 }} />
-          </Button>
-        }
-      />
+        trigger={ */}
+      <Button
+        basic
+        as="div"
+        floated="right"
+        onClick={() => setConfirmOpen(true)}
+        loading={loading ? true : false}
+      >
+        <Icon name="trash" color="red" style={{ margin: 0 }} />
+      </Button>
+      {/* }
+      /> */}
 
       <Transition visible={confirmOpen} animation="scale" duration={400}>
         <Confirm
