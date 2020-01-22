@@ -77,9 +77,9 @@ const Login = props => {
           </ul>
         </Message>
       )}
-      {/* <p style={{ textAlign: "right", marginTop: 20 }}>
+      <p style={{ textAlign: "right", marginTop: 20 }}>
         Don't have a account? <a href="/register">Register now.</a>
-      </p> */}
+      </p>
     </div>
   );
 };
