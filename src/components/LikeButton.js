@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { gql } from "apollo-boost";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
-import { Button, Label, Icon } from "semantic-ui-react";
+import { Button, Label, Icon, Popup } from "semantic-ui-react";
 
 const LikeButton = ({ user, post: { id, likes, likeCount } }) => {
   const [isLiked, setIsLiked] = useState(
@@ -51,18 +51,23 @@ const LikeButton = ({ user, post: { id, likes, likeCount } }) => {
   );
 
   return (
-    <Button
-      loading={loading ? true : false}
-      as="div"
-      labelPosition="right"
-      onClick={user ? likePost : null}
-    >
-      {error && console.log(error)}
-      {buttonMarkup}
-      <Label basic color="teal" pointing="left">
-        {newLikeCount}
-      </Label>
-    </Button>
+    <Popup
+      content={isLiked ? "Unlike" : "Like"}
+      trigger={
+        <Button
+          loading={loading ? true : false}
+          as="div"
+          labelPosition="right"
+          onClick={user ? likePost : null}
+        >
+          {error && console.log(error)}
+          {buttonMarkup}
+          <Label basic color="teal" pointing="left">
+            {newLikeCount}
+          </Label>
+        </Button>
+      }
+    />
   );
 };
 

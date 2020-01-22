@@ -23,25 +23,24 @@ const CommentForm = ({ postId }) => {
     <Card fluid>
       <Card.Content>
         <Card.Meta style={{ marginBottom: 8 }}>Post a comment</Card.Meta>
-        <div className="ui action fluid">
-          <Form onSubmit={createComment}>
-            <Form.Input
-              placeholder="Say something..."
-              onChange={e => setComment(e.target.value)}
-              type="text"
-              value={comment}
-            />
-            <Button
-              type="submit"
-              color="teal"
-              disabled={comment.trim() === ""}
-              style={{}}
-              loading={loading ? true : false}
-            >
-              Submit
-            </Button>
-          </Form>
-        </div>
+        <Form onSubmit={createComment}>
+          <Form.Input
+            placeholder="Say something..."
+            onChange={e => setComment(e.target.value)}
+            type="text"
+            value={comment}
+          />
+          <Button
+            type="submit"
+            color="teal"
+            disabled={comment.trim() === ""}
+            style={{}}
+            floated="right"
+            loading={loading ? true : false}
+          >
+            Submit
+          </Button>
+        </Form>
       </Card.Content>
       {error && (
         <Message warning>
