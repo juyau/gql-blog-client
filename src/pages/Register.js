@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import { Form, Button, Message, Icon } from "semantic-ui-react";
+import { Form, Button, Message, Icon, Grid } from "semantic-ui-react";
 
 import useForm from "../utils/hooks";
 import { AuthContext } from "../context/auth";
@@ -36,67 +36,71 @@ const Register = props => {
   }
 
   return (
-    <div className="form-container">
-      <Message
-        attached
-        header="Welcome to our site!"
-        content="Fill out the form below to sign-up for a new account"
-      />
-      <Form
-        onSubmit={onSubmit}
-        noValidate
-        className={
-          loading ? "attached fluid segment loading" : "attached fluid segment"
-        }
-      >
-        <Form.Input
-          placeholder="Username"
-          type="text"
-          name="username"
-          value={values.username}
-          onChange={onChange}
-          error={errors.username ? true : false}
+    <Grid container centered>
+      <Grid.Column mobile={16} tablet={8} computer={6}>
+        <Message
+          attached
+          header="Welcome to our site!"
+          content="Fill out the form below to sign-up for a new account"
         />
-        <Form.Input
-          placeholder="Email"
-          type="email"
-          name="email"
-          value={values.email}
-          onChange={onChange}
-          error={errors.email ? true : false}
-        />
-        <Form.Input
-          placeholder="Password"
-          type="password"
-          name="password"
-          value={values.password}
-          onChange={onChange}
-          error={errors.password ? true : false}
-        />
-        <Form.Input
-          placeholder="Password"
-          type="password"
-          name="confirmPassword"
-          value={values.confirmPassword}
-          onChange={onChange}
-          error={errors.confirmPassword ? true : false}
-        />
-        <Button type="submit" primary>
-          Register
-        </Button>
-      </Form>
-      {Object.keys(errors).length > 0 && (
-        <Message attached="bottom" warning>
-          <Icon name="warning circle" />
-          Input Errors:
-          <ul>
-            {Object.values(errors).map(value => (
-              <li key={value}> {value} </li>
-            ))}
-          </ul>
-        </Message>
-      )}
-    </div>
+        <Form
+          onSubmit={onSubmit}
+          noValidate
+          className={
+            loading
+              ? "attached fluid segment loading"
+              : "attached fluid segment"
+          }
+        >
+          <Form.Input
+            placeholder="Username"
+            type="text"
+            name="username"
+            value={values.username}
+            onChange={onChange}
+            error={errors.username ? true : false}
+          />
+          <Form.Input
+            placeholder="Email"
+            type="email"
+            name="email"
+            value={values.email}
+            onChange={onChange}
+            error={errors.email ? true : false}
+          />
+          <Form.Input
+            placeholder="Password"
+            type="password"
+            name="password"
+            value={values.password}
+            onChange={onChange}
+            error={errors.password ? true : false}
+          />
+          <Form.Input
+            placeholder="Password"
+            type="password"
+            name="confirmPassword"
+            value={values.confirmPassword}
+            onChange={onChange}
+            error={errors.confirmPassword ? true : false}
+          />
+          <Button type="submit" primary>
+            Register
+          </Button>
+        </Form>
+        {Object.keys(errors).length > 0 && (
+          <Message attached="bottom" warning>
+            <Icon name="warning circle" />
+            Input Errors:
+            <ul>
+              {Object.values(errors).map(value => (
+                <li key={value}> {value} </li>
+              ))}
+            </ul>
+          </Message>
+        )}
+      </Grid.Column>
+    </Grid>
   );
 };
 

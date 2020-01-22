@@ -64,16 +64,16 @@ const SinglePost = props => {
       likes
     } = data.getPost;
     postMarkup = (
-      <Grid>
+      <Grid container centered>
         <Grid.Row>
-          <Grid.Column width={2}>
+          <Grid.Column only="computer">
             <Image
               floated="left"
               size="large"
               src="https://react.semantic-ui.com/images/avatar/large/molly.png"
             />
           </Grid.Column>
-          <Grid.Column width={10}>
+          <Grid.Column mobile={16} computer={10}>
             <Card fluid>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
