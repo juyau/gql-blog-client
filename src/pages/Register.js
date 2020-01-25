@@ -59,6 +59,8 @@ const Register = props => {
         >
           <Form.Input
             placeholder="Username"
+            icon="user"
+            iconPosition="left"
             type="text"
             name="username"
             value={values.username}
@@ -69,6 +71,8 @@ const Register = props => {
             placeholder="Email"
             type="email"
             name="email"
+            icon="mail"
+            iconPosition="left"
             value={values.email}
             onChange={onChange}
             error={errors.email ? true : false}
@@ -77,6 +81,8 @@ const Register = props => {
             placeholder="Password"
             type="password"
             name="password"
+            icon="key"
+            iconPosition="left"
             value={values.password}
             onChange={onChange}
             error={errors.password ? true : false}
@@ -85,6 +91,8 @@ const Register = props => {
             placeholder="Confirm Password"
             type="password"
             name="confirmPassword"
+            icon="key"
+            iconPosition="left"
             value={values.confirmPassword}
             onChange={onChange}
             error={errors.confirmPassword ? true : false}

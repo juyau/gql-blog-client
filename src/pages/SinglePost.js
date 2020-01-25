@@ -88,13 +88,19 @@ const SinglePost = props => {
                 <Popup
                   content="Comments"
                   trigger={
-                    <Button as="div" labelPosition="right">
+                    <Button as="div" labelPosition="right" size="mini">
                       {user ? (
-                        <Button basic color="blue">
+                        <Button basic color="blue" size="mini">
                           <Icon name="comments" />
                         </Button>
                       ) : (
-                        <Button as={Link} to="/login" basic color="blue">
+                        <Button
+                          as={Link}
+                          to="/login"
+                          basic
+                          color="blue"
+                          size="mini"
+                        >
                           <Icon name="comments" />
                         </Button>
                       )}

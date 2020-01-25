@@ -17,7 +17,7 @@ const Home = () => {
     <Grid container>
       <Grid stackable columns={2}>
         <Grid.Row className="page-title">
-          <h1>Recent Posts</h1>
+          <h2>Recent Posts</h2>
         </Grid.Row>
 
         <Grid.Row>

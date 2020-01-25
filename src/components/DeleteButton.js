@@ -53,6 +53,7 @@ const DeleteButton = ({ postId, commentId, callback }) => {
         basic
         as="div"
         floated="right"
+        size="mini"
         onClick={() => setConfirmOpen(true)}
         loading={loading ? true : false}
       >

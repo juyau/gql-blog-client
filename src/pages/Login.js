@@ -57,6 +57,8 @@ const Login = props => {
             placeholder="Username"
             type="text"
             name="username"
+            icon="user"
+            iconPosition="left"
             value={values.username}
             onChange={onChange}
             error={errors.username ? true : false}
@@ -66,6 +68,8 @@ const Login = props => {
             placeholder="Password"
             type="password"
             name="password"
+            icon="key"
+            iconPosition="left"
             value={values.password}
             onChange={onChange}
             error={errors.password ? true : false}

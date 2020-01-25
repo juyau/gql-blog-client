@@ -69,6 +69,7 @@ const PostForm = () => {
         <Button
           type="submit"
           color="teal"
+          size="small"
           disabled={values.body.trim() === "" || values.title.trim() === ""}
           style={{ marginBottom: 20 }}
           loading={loading ? true : false}

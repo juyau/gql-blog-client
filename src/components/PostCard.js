@@ -35,13 +35,14 @@ function PostCard({
             <Button
               as={Link}
               to={user ? `/posts/${id}` : "/login"}
+              size="mini"
               labelPosition="right"
               onClick={commentPost}
             >
-              <Button basic color="blue">
+              <Button basic color="blue" size="mini">
                 <Icon name="comments" />
               </Button>
-              <Label basic color="blue" pointing="left">
+              <Label basic color="blue" pointing="left" size="mini">
                 {commentCount}
               </Label>
             </Button>

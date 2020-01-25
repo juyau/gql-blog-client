@@ -33,6 +33,7 @@ const CommentForm = ({ postId }) => {
           <Button
             type="submit"
             color="teal"
+            size="small"
             disabled={comment.trim() === ""}
             style={{}}
             floated="right"

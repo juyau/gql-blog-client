@@ -36,16 +36,16 @@ const LikeButton = ({ user, post: { id, likes, likeCount } }) => {
 
   const buttonMarkup = user ? (
     isLiked ? (
-      <Button color="teal">
+      <Button color="teal" size="mini">
         <Icon name="heart" />
       </Button>
     ) : (
-      <Button color="teal" basic>
+      <Button color="teal" basic size="mini">
         <Icon name="heart" />
       </Button>
     )
   ) : (
-    <Button color="teal" basic as={Link} to="/login">
+    <Button color="teal" basic as={Link} to="/login" size="mini">
       <Icon name="heart" />
     </Button>
   );
@@ -57,12 +57,13 @@ const LikeButton = ({ user, post: { id, likes, likeCount } }) => {
         <Button
           loading={loading ? true : false}
           as="div"
+          size="mini"
           labelPosition="right"
           onClick={user ? likePost : null}
         >
           {error && console.log(error)}
           {buttonMarkup}
-          <Label basic color="teal" pointing="left">
+          <Label basic color="teal" pointing="left" size="mini">
             {newLikeCount}
           </Label>
         </Button>
