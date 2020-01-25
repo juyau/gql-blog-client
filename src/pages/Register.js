@@ -36,7 +36,7 @@ const Register = props => {
   }
 
   return (
-    <Grid container centered>
+    <Grid container centered verticalAlign="middle">
       <Grid.Column mobile={16} tablet={8} computer={6}>
         <Message
           attached
@@ -77,7 +77,7 @@ const Register = props => {
             error={errors.password ? true : false}
           />
           <Form.Input
-            placeholder="Password"
+            placeholder="confirmPassword"
             type="password"
             name="confirmPassword"
             value={values.confirmPassword}
