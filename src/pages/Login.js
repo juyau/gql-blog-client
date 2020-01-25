@@ -31,7 +31,13 @@ const Login = props => {
   }
 
   return (
-    <Grid container centered verticalAlign="middle">
+    // vertical align not working
+    <Grid
+      container
+      centered
+      verticalAlign="middle"
+      style={{ marginTop: "10%" }}
+    >
       <Grid.Column mobile={16} tablet={8} computer={6}>
         <Message
           attached
